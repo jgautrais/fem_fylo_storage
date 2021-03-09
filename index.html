@@ -14,17 +14,31 @@
 </head>
 
 <body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-
-  0 GB
-  1000 GB
+  <div class="canvas">
+    <div class="header">
+      <img class="logo" src="images/logo.svg" alt="logo">
+      <div class="icon">
+        <div class="square"><img src="images/icon-document.svg" alt="document"></div>
+        <div class="square"><img src="images/icon-folder.svg" alt="folder"></div>
+        <div class="square"><img src="images/icon-upload.svg" alt="upload"></div>
+      </div>
+    </div>
+    <div class="counter">
+      <div class="text">You’ve used <span>815 GB</span> of your storage</div>
+      <div class="slider">
+        <input type="range" min="0" max="1000" value="815">
+      </div>
+      <div class="scale">
+        <div class="scale_low">0 GB</div>
+        <div class="scale_high">1000 GB</div> 
+      </div>
+      <div class="capacity">185 <span>GB Left</span></div>
+    </div>  
+  </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/jgautrais/fem_fylo_storage">Jeremy</a>.
   </div>
 </body>
 

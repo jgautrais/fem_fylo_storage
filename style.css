@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.0;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -85,13 +85,214 @@ html, body {
     padding: 0;
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
+    font-weight: 400;
+    color: hsl(243, 100%, 93%);
+    background: hsl(229, 57%, 11%);
+    box-sizing: border-box;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.canvas {
+  width: 375px;
+  height: 667px;
+  background: url("images/bg-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 375px 667px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.header {
+  width: 84%;
+  height: 195px;
+  background: hsl(228, 56%, 26%);
+  border-radius: 8px 100px 8px 8px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  box-shadow: 0px 1px 10px 0px hsl(229, 57%, 11%);
+}
+
+.logo {
+  width: 135px;
+  height: 40px;
+  margin-left: 40px;
+}
+
+.icon {
+  margin: 30px 110px 0px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.square {
+  width: 45px;
+  height: 45px;
+  background: hsl(229, 57%, 11%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  width: 84%;
+  height: 155px;
+  margin-top: 15px;
+  background: hsl(228, 56%, 26%);
+  border-radius: 8px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-shadow: 0px 1px 10px 0px hsl(229, 57%, 11%);
+}
+
+.text {
+  color: hsl(243, 100%, 93%);
+  margin-top: 30px;
+}
+
+.text span {
+  font-weight: 700;
+}
+
+.slider {
+  margin: 15px 0 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.slider input[type="range"] {
+  width: 83%;
+  -webkit-appearance: none;
+  overflow: hidden;
+  background: linear-gradient(to right, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 80.5%, hsl(229, 57%, 11%) 80.5%, hsl(229, 57%, 11%) 100%);
+  border-radius: 18px; 
+  height: 18px;
+  border: 2px solid hsl(229, 57%, 11%);
+}
+
+input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      border-radius: 15px;
+      border: 2px solid hsl(335, 100%, 65%);
+      cursor: ew-resize;
+      background: white;
+      box-sizing: content-box;
+    }
+
+.slider input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.scale {
+  color: hsl(243, 100%, 93%);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  width: 83%;
+}
+
+.capacity {
+  background-color: white;
+  color: hsl(229, 57%, 11%);
+  padding: 12px 20px;
+  position: absolute;
+  bottom: -31px;
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px 5px hsl(229, 57%, 11%);
+}
+
+.capacity span {
+  font-size: 14px;
+  color: hsl(229, 7%, 55%);
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+@media (min-width:1440px){
+  html, body {
+    justify-content: center;
+  }
+  
+  .canvas {
+  width: 1440px;
+  height: 820px;
+  flex-flow: row;
+  background: url("images/bg-desktop.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: 1440px 420px;  
+  }
+  
+  .header {
+  width: 315px;
+  box-shadow: 0px 5px 50px 5px hsl(229, 57%, 11%);  
+}
+  
+  .counter {
+    width: 38%;
+    margin-top: 40px;
+    margin-left: 25px;
+    justify-content: center;
+    box-shadow: 0px 5px 50px 5px hsl(229, 57%, 11%);
+  }
+  
+  .text {
+  align-self: flex-start;
+  margin-left: 8%;
+  margin-top: 0;
+}
+  
+  .capacity {
+  bottom: 129px;
+  left: 59.5%;
+  border-radius: 8px 8px 0 8px;
+  box-shadow: none;
+  filter: drop-shadow(2px 5px 5px hsl(229, 57%, 11%));
+    
+}
+  
+  .capacity:after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid white;
+  border-right: 0px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid transparent;
+  bottom: -30px;
+  right: 0;
+}
+  
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin-top: 30px;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
